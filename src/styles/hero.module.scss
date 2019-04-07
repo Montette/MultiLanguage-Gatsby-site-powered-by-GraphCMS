@@ -1,0 +1,41 @@
+@import 'mixins';
+@import 'colors';
+
+
+
+.hero {
+    max-height: 100vh;
+    &__slide {
+        position: relative;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__text {
+        @include absoluteCenter;
+        text-align: center;
+        font-family: 'Unna', serif;
+        color: $white;
+         @include fluidSize(20px, 60px);
+    }
+
+    &__subtitle {
+        font-size: .5em;
+        position: relative;
+        margin-bottom: 0;
+        &:after {
+            @include pseudoElement(200%, 2px, $white);
+            bottom: -.9em;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__title {
+        font-size: 1em;
+        margin-top: .8em;
+       
+    }
+}

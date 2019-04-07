@@ -1,0 +1,18 @@
+@import 'mixins';
+@import 'colors';
+
+.langButton, .choosenButton {
+    background: transparent;
+    color: $white;
+    border: none;
+    @include fluidSize(12px, 14px);
+    padding: .2em .6em;
+    margin-left: .5em;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.choosenButton {
+    border: 1px solid $white;
+}

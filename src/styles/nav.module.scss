@@ -1,0 +1,52 @@
+@import 'mixins';
+@import 'colors';
+
+.nav {
+    @include container;
+   
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    z-index: 1000;
+
+    color: $white;
+    &__logo {
+        @include fluidSize(20px, 40px);
+        font-weight: bold;
+    }
+
+    &__phone {
+        @include fluidSize(12px, 16px);
+    }
+    &__top {
+        position: relative;
+        @include flex(space-between, center);
+        &:after {
+            @include pseudoElement(99vw, 1px, $white);
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+        
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        @include fluidSize(5px, 10px);
+        padding-top: 1em;
+
+    }
+
+    &__links {
+        @include flex(center, center);
+        list-style-type: none;
+        
+    }
+    &__link {
+        margin-left: 1.7em;
+        @include fluidSize(14px, 20px);
+        
+    }
+}

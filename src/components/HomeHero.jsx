@@ -1,0 +1,40 @@
+import React from 'react';
+import Slider from "react-slick";
+import '../../node_modules/slick-carousel/slick/slick.css'
+import '../../node_modules/slick-carousel/slick/slick-theme.css'
+import styles from '../styles/hero.module.scss';
+import sliderImg from '../images/manekin.jpg'
+
+
+const HomeHero = ({ data }) => {
+ 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false
+      };
+    return (
+        <header className={styles.hero}>
+        <Slider {...settings}>
+            {data.map(slide => {
+                return (
+                    <div className={styles.hero__slide}>
+                        <img src={sliderImg} alt="" />
+                        <div className={styles.hero__text}>
+                            <p className={styles.hero__subtitle}>{slide.subtitle}</p>
+                            <h1 className={styles.hero__title}>{slide.title}</h1>
+                        </div>
+                    </div>
+                )
+            })
+          }
+      </Slider>
+    
+        </header>
+    )
+};
+
+export default HomeHero
