@@ -4,9 +4,20 @@ import Link from '../Link';
 import Langs from '../Langs';
 import styles from '../../styles/nav.module.scss';
 import { FormattedMessage } from 'react-intl';
+import {Location} from '@reach/router'
+import {useState, useEffect} from 'react';
+import cx from 'classnames';
 // import '../../styles/nav.scss'
 
-const Nav = ({ siteTitle, hideLangs }) => (
+const Nav = ({ siteTitle, hideLangs }) => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuClasses = !isMenuOpen ? styles.nav__links : cx(styles.nav__links, styles.open);
+  const burgerClasses = !isMenuOpen ? styles.nav__burger : cx(styles.nav__burger, styles.active);
+  return (
+
+
   <nav className={styles.nav}>
 
     <div className={styles.nav__top}>
@@ -15,27 +26,25 @@ const Nav = ({ siteTitle, hideLangs }) => (
     </div>
     <div className={styles.nav__bottom}>
       <Link className={styles.nav__logo} to="/">{siteTitle}</Link>
-      <ul className={styles.nav__links}>
+      <button 
+      aria-label="open menu"
+      className={burgerClasses} 
+      onClick={()=> setIsMenuOpen(!isMenuOpen)}>
+          <span></span>
+          <span ></span>
+          <span></span>
+          <span></span>
+      </button>
+      <ul className={menuClasses}>
         <li className={styles.nav__link}><Link><FormattedMessage id="nav.About us" /></Link></li>
         <li className={styles.nav__link}><Link><FormattedMessage id="nav.Services" /></Link></li>
         <li className={styles.nav__link}><Link><FormattedMessage id="nav.Portfolio" /></Link></li>
         <li className={styles.nav__link}><Link><FormattedMessage id="nav.Contact" /></Link></li>
-        {/* <li className="nav__link"><Link>O nas</Link></li>
-        <li className="nav__link"><Link>Usługi</Link></li>
-        <li className="nav__link"><Link>Portfolio</Link></li>
-        <li className="nav__link"><Link>Kontakt</Link></li> */}
       </ul>
     </div>
-
-      {/* <h1>
-        <Link to="/">
-          {siteTitle}
-        </Link>
-      </h1>
-      {!hideLangs && <Langs />} */}
-
   </nav>
-);
+  )
+}
 
 Nav.propTypes = {
   siteTitle: PropTypes.string,
