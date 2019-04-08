@@ -29,6 +29,7 @@ a {
 }
 
 .graphcms-image-wrapper, .slick-slide {
+    width: 100vw;
     @media (max-width: 750px) {
         height: 95vh;
     }

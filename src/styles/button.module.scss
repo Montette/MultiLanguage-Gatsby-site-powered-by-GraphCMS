@@ -1,0 +1,22 @@
+@import 'colors';
+@import 'mixins';
+
+.button {
+    background: transparent;
+    border: 1px solid $white;
+    @include fluidSize(12px, 16px);
+    font-family: 'Montserrat', sans-serif;
+    // font-weight: bold;
+    color: $white;
+    text-transform: uppercase;
+    padding: .7em 1em;
+    transition: .2s;
+    &:hover {
+        cursor: pointer;
+        color: $lightBlack;
+        background: $white;
+        
+      
+    }
+
+}

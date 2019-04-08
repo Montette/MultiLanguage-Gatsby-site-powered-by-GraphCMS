@@ -5,4 +5,5 @@ export default {
   'Now go build something great': 'Bauen Sie jetzt etwas Großes auf',
   'or learn more': '...oder erfahren Sie mehre.',
   'Go to page 2': 'Gehen Sie zu Seite 2',
+  'See more': 'Mehr sehen'
 };

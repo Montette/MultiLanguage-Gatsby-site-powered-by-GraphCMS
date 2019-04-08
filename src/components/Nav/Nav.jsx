@@ -27,7 +27,7 @@ const Nav = ({ siteTitle, hideLangs }) => {
     <div className={styles.nav__bottom}>
       <Link className={styles.nav__logo} to="/">{siteTitle}</Link>
       <button 
-        aria-label="open menu"
+        aria-label={isMenuOpen ? 'close menu' : 'open menu'}
         className={burgerClasses} 
         onClick={()=> setIsMenuOpen(!isMenuOpen)}>
             <span></span>
