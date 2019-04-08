@@ -55,6 +55,12 @@
     &__link {
         margin-left: 1.7em;
         @include fluidSize(14px, 20px);
+        a {
+            &.active {
+                padding: 5px;
+                border: 1px solid $white;
+            }
+        }
         
     }
     &__burger {

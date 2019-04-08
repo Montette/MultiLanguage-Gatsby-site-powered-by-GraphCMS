@@ -27,19 +27,19 @@ const Nav = ({ siteTitle, hideLangs }) => {
     <div className={styles.nav__bottom}>
       <Link className={styles.nav__logo} to="/">{siteTitle}</Link>
       <button 
-      aria-label="open menu"
-      className={burgerClasses} 
-      onClick={()=> setIsMenuOpen(!isMenuOpen)}>
-          <span></span>
-          <span ></span>
-          <span></span>
-          <span></span>
+        aria-label="open menu"
+        className={burgerClasses} 
+        onClick={()=> setIsMenuOpen(!isMenuOpen)}>
+            <span></span>
+            <span ></span>
+            <span></span>
+            <span></span>
       </button>
       <ul className={menuClasses}>
-        <li className={styles.nav__link}><Link><FormattedMessage id="nav.About us" /></Link></li>
-        <li className={styles.nav__link}><Link><FormattedMessage id="nav.Services" /></Link></li>
-        <li className={styles.nav__link}><Link><FormattedMessage id="nav.Portfolio" /></Link></li>
-        <li className={styles.nav__link}><Link><FormattedMessage id="nav.Contact" /></Link></li>
+        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/about"><FormattedMessage id="nav.About us" /></Link></li>
+        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/services"><FormattedMessage id="nav.Services" /></Link></li>
+        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/portfolio"><FormattedMessage id="nav.Portfolio" /></Link></li>
+        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/contact"><FormattedMessage id="nav.Contact" /></Link></li>
       </ul>
     </div>
   </nav>
