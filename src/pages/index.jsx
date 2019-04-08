@@ -31,6 +31,11 @@ export const query = graphql`
       ) {
         title
         subtitle
+        image {
+          width
+          height
+          handle
+        }
       }
       services (
         where: {
