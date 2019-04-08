@@ -19,17 +19,39 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+
+//slick carousel from home-hero - must be global
+
 .slick-slide {
     max-height: 100vh;
-    min-height: 80vh;
+    // min-height: 80vh;
 }
 
-.graphcms-image-wrapper {
-    @media (max-width: 600px) {
-        overflow: visible;
+.graphcms-image-wrapper, .slick-slide {
+    @media (max-width: 750px) {
+        height: 95vh;
+    }
+}
 
-        & img {
-            height: 220%;
+.slick-dots {
+    bottom: 20px!important;
+    
+    li {
+        margin: 0 20px!important;
+        button {
+            &:before {
+                font-size: 15px!important;
+                color: white!important;
+            }
+
+        }
+        &.slick-active {
+            button {
+                &:before {
+                    color: white!important;
+                }
+            }
         }
     }
 }
