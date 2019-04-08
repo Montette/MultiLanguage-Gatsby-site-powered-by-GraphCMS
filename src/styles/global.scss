@@ -19,3 +19,17 @@ a {
     color: inherit;
     text-decoration: none;
 }
+.slick-slide {
+    max-height: 100vh;
+    min-height: 80vh;
+}
+
+.graphcms-image-wrapper {
+    @media (max-width: 600px) {
+        overflow: visible;
+
+        & img {
+            height: 220%;
+        }
+    }
+}

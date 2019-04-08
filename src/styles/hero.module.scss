@@ -1,12 +1,18 @@
 @import 'mixins';
 @import 'colors';
 
+.slick-slide {
+    max-height: 100vh;
+    min-height: 80vh;
+}
 
 
 .hero {
     max-height: 100vh;
     &__slide {
         position: relative;
+        max-height: 100vh;
+        min-height: 80vh;
         img {
             max-width: 100%;
             height: auto;
