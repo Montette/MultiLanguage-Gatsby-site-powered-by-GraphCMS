@@ -7,9 +7,13 @@ body {
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: $backgroundWhite;
-    background-color: lightgrey;
     overflow-x: hidden;
 }
+
+.main {
+  @include container;
+}
+
 
 *, *::after, *::before {
     box-sizing: border-box;

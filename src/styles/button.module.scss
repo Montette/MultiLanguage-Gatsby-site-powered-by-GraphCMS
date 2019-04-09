@@ -3,20 +3,28 @@
 
 .button {
     background: transparent;
-    border: 1px solid $white;
+    border: 1px solid $lightBlack;
+    color: $lightBlack;
     @include fluidSize(12px, 16px);
     font-family: 'Montserrat', sans-serif;
     // font-weight: bold;
-    color: $white;
+    color: $lightBlack;
     text-transform: uppercase;
     padding: .7em 1em;
     transition: .2s;
     &:hover {
         cursor: pointer;
-        color: $lightBlack;
-        background: $white;
-        
-      
+        color: $white;
+        background: $lightBlack;  
+    }
+    &.white {
+        color: $white;
+        border-color: $white;
+        &:hover {
+            color: $white;
+            border-color: $white;
+            background: transparent;
+        }
     }
 
 }

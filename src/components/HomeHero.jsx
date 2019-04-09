@@ -24,13 +24,13 @@ const HomeHero = ({ data }) => {
         <Slider {...settings}>
             {data.map(slide => {
                 return (
-                    <div className={styles.hero__slide}>
+                    <div key={slide.id} className={styles.hero__slide}>
                         {/* <img src={sliderImg} alt="" /> */}
                         <GraphImg image={slide.image} withWebp={true} />
                         <div className={styles.hero__text}>
                             <p className={styles.hero__subtitle}>{slide.subtitle}</p>
                             <h1 className={styles.hero__title}>{slide.title}</h1>
-                            <Button text="home.See more" />
+                            <Button text="home.See more" style="white"/>
                         </div>
                     </div>
                 )

@@ -43,9 +43,9 @@ const withLayout = customProps => PageComponent => props => {
             <SEO title={pageTitle} lang={pageLocale} />
             <Nav siteTitle={data.site.siteMetadata.title} hideLangs={hideLangs} />
        
-              <main className='main'>
+              {/* <main className='main'> */}
                 <PageComponent {...props} />
-              </main>
+              {/* </main> */}
               {/* <footer>
                 © {new Date().getFullYear()}, Built with
                 {` `}

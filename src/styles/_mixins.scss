@@ -54,3 +54,21 @@
     height: $height;
     width: $width;
 }
+
+@mixin sectionTitle {
+    font-family: 'Unna', serif;
+    @include fluidSize(25px, 45px);
+    font-weight: bold;
+    color: $textColor;
+    margin-bottom: .5em;
+}
+
+@mixin sectionText {
+    @include fluidSize(14px, 18px);
+    line-height: 2em;
+    color: $textColor;
+}
+
+@mixin sectionPadding {
+    padding: 2em 0;
+}
