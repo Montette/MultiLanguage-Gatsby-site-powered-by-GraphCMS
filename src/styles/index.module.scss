@@ -117,12 +117,7 @@
         &__img {
             max-width: 100%;
             transition: transform .8s ease-in;
-            // &:hover {
-            //     transform: scale(1.2);
-            // }
         }
-
-     
 
         &__title {
             @include sectionText;
@@ -151,49 +146,39 @@
         @media(max-width:500px) {
             width: 100%;
         }
-        // &:hover {
-        //     & img {
-        //         transform: scale(1.2);
-        //     }
-        // }
-
-        // margin-left: 10px;
-        // @include fluidSize(300px, 400px);
-        // max-width: 400px;
-
-        // @media (max-width: 1170px) {
-        //     margin: 0 40px 40px 50px;
-        // }
-
-        // @media (max-width: 950px) {
-        //     margin: 0 0 30px 20px;
-        // }
-
-        // @media (max-width: 770px) {
-        //     margin: 0;
-        //     max-width: 600px;
-        // }
-
-        // &__img {
-        //     max-width: 100%;
-
-        //     @media (max-width: 1320px) {
-        //         max-width: 1em;
-        //         max-height: 200px;
-        //     }
-
-        //     @media (max-width: 770px) {
-        //         margin: 0;
-        //         max-width: 1.2em;
-        //     }
-        //}
-
 
     }
 
-
 }
 
-.graphphoto {
-    max-width: 300px;
+.portfolio {
+    @include fluidSize(15px, 60px);
+    padding: 3.5em 0;
+
+    position: relative;
+    &__imgWrapper {
+   
+    }
+    &__img {
+        max-width: 65%;
+      
+    }
+
+    &__textBlock {
+       
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        background: $white;
+        padding: 1.5em 1em;
+        text-align: center;
+    }
+
+    @media (max-width: 750px) {
+        &__img {
+            width: 100%;
+            max-height: 300px;
+        }
+    }
 }

@@ -7,5 +7,8 @@ export default {
   'Go to page 2': 'Go to page 2',
   'See more': 'See more',
   'Read': 'Read',
-  'What we can do for you': 'What we can do for you'
+  'What we can do for you': 'What we can do for you',
+  'Take a look': 'Take a look',
+  'What can we sew for you': 'What can we sew for you',
+  'See portfolio': 'See portfolio'
 };

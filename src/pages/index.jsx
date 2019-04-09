@@ -10,9 +10,10 @@ import Button from '../components/Button'
 import GraphImg from 'graphcms-image'
 import cx from 'classnames'
 import SectionHeading from '../components/SectionHeading'
+// import portfolioImg from '../images/services2.jpg'
 
-const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts} } }) => {
- 
+const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfolios}} }) => {
+  
   return (
   <>
    
@@ -31,12 +32,10 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts} } }) => {
       {services.map(service => {
         return (
          <div key={service.id} className={cx(styles.services__service, styles.service)}> 
-         {/* <div className={styles.service__overlay}></div> */}
             <Link className={styles.service__link} to={`/services/#${service.title}`}>
             <div className={cx(styles.service__overlay, styles.overlay)}>
             <p className={styles.overlay__text}>{service.intro}</p>
             <hr/>
-            {/* <p className={styles.overlay__text}>Zobacz szczególy</p> */}
             </div>
               <GraphImg image={service.image} withWebp={true} className={styles.service__img} outerWrapperClassName={styles.service__imgWrapper}/>
               </Link>
@@ -47,6 +46,13 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts} } }) => {
         )
       })}
       </div>
+    </section>
+    <section className={styles.portfolio}>
+    <GraphImg image={homePortfolios[0].image} withWebp={true} className={styles.portfolio__img} outerWrapperClassName={styles.portfolio__imgWrapper}/>
+    <div className={styles.portfolio__textBlock}>
+    <SectionHeading subtitle='home.Take a look' title='home.What can we sew for you'/>
+    <Button text='home.See portfolio' style='black'/>
+    </div>
     </section>
 
   </main>
@@ -60,8 +66,14 @@ const customProps = {
 
 export const query = graphql`
   query getServices($locale: String){
-    
     komfrez {
+      homePortfolios {
+        image {
+          width
+          height
+          handle
+        }
+      }
       heroes (
         where: {
           language: $locale
