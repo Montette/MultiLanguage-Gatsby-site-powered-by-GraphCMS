@@ -5,6 +5,7 @@
 .about {
     @include flex(space-between, flex-start);
     @include fluidSize(20px, 150px, 600px, 1600px);
+    position: relative;
     padding: .9em 3.5em 1em 0;
 
     @media (max-width: 600px) {
@@ -26,11 +27,24 @@
         align-self: flex-end;
     }
 
+    &__needle {
+        position: absolute;
+        max-width: 70%;
+        height: auto;
+        bottom: -40%;
+        z-index: -1;
+        @media (max-width: 750px) {
+            max-width: 90%;
+            bottom: -20%;
+          
+        }
+    }
+
 }
 
 .services {
     @include fluidSize(20px, 40px);
-    padding-top: 1.5em;
+    padding-top: 4em;
     &__container {
         display: flex;
         justify-content: space-between;
@@ -186,9 +200,23 @@
 .contact {
     @include flex(center, center);
     flex-direction: column;
+    position: relative;
     @include fluidSize(50px, 100px);
     padding: .2em 0 1em 0;
     & button {
         margin-top: 2.5em;
+    }
+    &__diddly {
+        position: absolute;
+        max-width: 70%;
+        height: auto;
+        left: 0;
+        bottom: -40%;
+        z-index: -1;
+        @media (max-width: 750px) {
+            max-width: 50%;
+            bottom: -20%;
+          
+        }
     }
 }

@@ -10,6 +10,8 @@ import Button from '../components/Button'
 import GraphImg from 'graphcms-image'
 import cx from 'classnames'
 import SectionHeading from '../components/SectionHeading'
+import needle from '../images/needle.svg'
+import diddly from '../images/nic.svg'
 // import portfolioImg from '../images/services2.jpg'
 
 const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfolios}} }) => {
@@ -20,6 +22,7 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
   <HomeHero data={heroes}/>
   <main className='main'>
     <section className={styles.about}>
+    <img src={needle} className={styles.about__needle}alt=""/>
       <h2 className={styles.about__heading}>{homeAbouts[0].title}</h2>
       <div className={styles.about__text} dangerouslySetInnerHTML={{__html: homeAbouts[0].text.html}}> 
     
@@ -55,6 +58,7 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
     </div>
     </section>
       <section className={styles.contact}>
+      <img src={diddly} className={styles.contact__diddly}alt=""/>
       <SectionHeading subtitle='home.Interested in cooperation?' title="home.Let's create something beautiful together"/>
       <Button text='home.Write to us' style='black'/>
       </section>
