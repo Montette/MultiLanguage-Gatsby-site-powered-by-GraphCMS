@@ -21,9 +21,9 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
   <main className='main'>
     <section className={styles.about}>
       <h2 className={styles.about__heading}>{homeAbouts[0].title}</h2>
-      <p className={styles.about__text} dangerouslySetInnerHTML={{__html: homeAbouts[0].text.html}}> 
+      <div className={styles.about__text} dangerouslySetInnerHTML={{__html: homeAbouts[0].text.html}}> 
     
-      </p>
+      </div>
       <Button text='home.See more' style='black'/>
     </section>
     <section className={styles.services}>
