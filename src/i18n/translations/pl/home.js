@@ -10,5 +10,8 @@ export default {
   'What we can do for you': 'Co możemy dla Ciebie zrobić',
   'Take a look': 'Obejrzyj',
   'What can we sew for you': 'Co możemy dla Ciebie uszyć',
-  'See portfolio': 'Zobacz portfolio'
+  'See portfolio': 'Zobacz portfolio',
+  'Interested in cooperation?': 'Zainteresowany współpracą?',
+  "Let's create something beautiful together": "Stwórzmy razem coś pięknego",
+  'Write to us': 'Napisz do nas'
 };

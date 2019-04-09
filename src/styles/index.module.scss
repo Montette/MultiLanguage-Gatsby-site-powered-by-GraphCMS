@@ -182,3 +182,13 @@
         }
     }
 }
+
+.contact {
+    @include flex(center, center);
+    flex-direction: column;
+    @include fluidSize(50px, 100px);
+    padding: .2em 0 1em 0;
+    & button {
+        margin-top: 2.5em;
+    }
+}

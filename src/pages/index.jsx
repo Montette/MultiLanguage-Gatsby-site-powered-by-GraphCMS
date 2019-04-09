@@ -54,7 +54,10 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
     <Button text='home.See portfolio' style='black'/>
     </div>
     </section>
-
+      <section className={styles.contact}>
+      <SectionHeading subtitle='home.Interested in cooperation?' title="home.Let's create something beautiful together"/>
+      <Button text='home.Write to us' style='black'/>
+      </section>
   </main>
   </>
 )};
