@@ -12,6 +12,7 @@ import { translations, languages } from '../i18n';
 
 import Nav from '../components/Nav/Nav';
 import SEO from '../components/SEO';
+import Footer from '../components/Footer'
 import '../styles/layout.scss'
 
 addLocaleData([...plData, ...enData, ...deData]);
@@ -51,6 +52,7 @@ const withLayout = customProps => PageComponent => props => {
                 {` `}
                 <a href="https://www.gatsbyjs.org">Gatsby</a>
               </footer> */}
+              <Footer />
      
           </PageContext.Provider>
         </IntlProvider>

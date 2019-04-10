@@ -202,7 +202,7 @@
     flex-direction: column;
     position: relative;
     @include fluidSize(50px, 100px);
-    padding: .2em 0 1em 0;
+    padding: .2em 0 4em 0;
     & button {
         margin-top: 2.5em;
     }
@@ -211,11 +211,10 @@
         max-width: 70%;
         height: auto;
         left: 0;
-        bottom: -40%;
+        bottom: 25%;
         z-index: -1;
         @media (max-width: 750px) {
             max-width: 50%;
-            bottom: -20%;
           
         }
     }
