@@ -19,7 +19,7 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
   <>
    
   {/* <HomeHero data={heroes} /> */}
-  <main className='main'>
+  <main style={{height: "100vh",display: "flex", alignItems: "center", justifyContent: "center"}}className='main'>
   <h1 style={{textAlign: "center"}}>Przepraszamy, strona w budowie. <br/> Sorry, page under construction </h1>
     {/* <section className={styles.about}>
     <img src={needle} className={styles.about__needle}alt=""/>
