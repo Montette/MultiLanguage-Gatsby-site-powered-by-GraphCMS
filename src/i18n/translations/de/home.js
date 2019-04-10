@@ -12,6 +12,6 @@ export default {
   'What can we sew for you': 'Was können wir für Sie nähen',
   'See portfolio': 'Portfolio anzeigen',
   'Interested in cooperation?': 'Interesse an einer Zusammenarbeit?',
-  "Let's create something beautiful together": "Lass uns zusammen etwas Schönes schaffen",
+  "Let's create something beautiful together": "Lass uns zusammen etwas ",
   'Write to us': 'Schreiben Sie uns'
 };

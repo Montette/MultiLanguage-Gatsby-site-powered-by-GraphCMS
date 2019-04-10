@@ -14,12 +14,11 @@ import needle from '../images/needle.svg'
 import diddly from '../images/nic.svg'
 // import portfolioImg from '../images/services2.jpg'
 
-const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfolios}} }) => {
-  
+const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfolios}}, pageContext }) => {
   return (
   <>
    
-  <HomeHero data={heroes}/>
+  <HomeHero data={heroes} />
   <main className='main'>
     <section className={styles.about}>
     <img src={needle} className={styles.about__needle}alt=""/>
@@ -30,7 +29,7 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
       <Button text='home.See more' style='black'/>
     </section>
     <section className={styles.services}>
-    <SectionHeading subtitle='home.Read' title='home.What we can do for you'/>
+    <SectionHeading subtitle='home.Read' title='home.What we can do for you' />
     <div className={styles.services__container}>
       {services.map(service => {
         return (
@@ -59,7 +58,7 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
     </section>
       <section className={styles.contact}>
       <img src={diddly} className={styles.contact__diddly}alt=""/>
-      <SectionHeading subtitle='home.Interested in cooperation?' title="home.Let's create something beautiful together"/>
+      <SectionHeading subtitle='home.Interested in cooperation?' title="home.Let's create something beautiful together" locale={pageContext.locale} section="contact"/>
       <Button text='home.Write to us' style='black'/>
       </section>
   </main>
