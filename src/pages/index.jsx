@@ -18,9 +18,10 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
   return (
   <>
    
-  <HomeHero data={heroes} />
+  {/* <HomeHero data={heroes} /> */}
   <main className='main'>
-    <section className={styles.about}>
+  <h1 style={{textAlign: "center"}}>Przepraszamy, strona w budowie. <br/> Sorry, page under construction </h1>
+    {/* <section className={styles.about}>
     <img src={needle} className={styles.about__needle}alt=""/>
       <h2 className={styles.about__heading}>{homeAbouts[0].title}</h2>
       <div className={styles.about__text} dangerouslySetInnerHTML={{__html: homeAbouts[0].text.html}}> 
@@ -60,7 +61,7 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
       <img src={diddly} className={styles.contact__diddly}alt=""/>
       <SectionHeading subtitle='home.Interested in cooperation?' title="home.Let's create something beautiful together" locale={pageContext.locale} section="contact"/>
       <Button text='home.Write to us' style='black'/>
-      </section>
+      </section> */}
   </main>
   </>
 )};

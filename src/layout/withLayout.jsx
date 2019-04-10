@@ -41,7 +41,7 @@ const withLayout = customProps => PageComponent => props => {
         <IntlProvider locale={pageLocale} messages={translations[pageLocale]}>
           <PageContext.Provider value={pageContextValue}>
             <SEO title={pageTitle} lang={pageLocale} />
-            <Nav siteTitle={data.site.siteMetadata.title} hideLangs={hideLangs} />
+            {/* <Nav siteTitle={data.site.siteMetadata.title} hideLangs={hideLangs} /> */}
        
               {/* <main className='main'> */}
                 <PageComponent {...props} />
