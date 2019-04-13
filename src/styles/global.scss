@@ -12,6 +12,10 @@ body {
 
 .main {
   @include container;
+  padding: 12em 0 7em 0;
+  &--home {
+      padding-top: 0;
+  }
 }
 
 

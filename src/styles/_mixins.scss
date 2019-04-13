@@ -1,7 +1,7 @@
 @mixin container {
     max-width: 1400px;
     margin: 0 auto;
-
+    // padding-top: 100px;
     @media (max-width: 1500px) {
         padding-left: 40px;
         padding-right: 40px;

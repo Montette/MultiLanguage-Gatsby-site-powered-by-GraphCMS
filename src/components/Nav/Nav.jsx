@@ -9,16 +9,17 @@ import {useState, useEffect} from 'react';
 import cx from 'classnames';
 // import '../../styles/nav.scss'
 
-const Nav = ({ siteTitle, hideLangs }) => {
-
+const Nav = ({ siteTitle, hideLangs, style }) => {
+  console.log(style);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuClasses = !isMenuOpen ? styles.nav__links : cx(styles.nav__links, styles.open);
   const burgerClasses = !isMenuOpen ? styles.nav__burger : cx(styles.nav__burger, styles.active);
+  const navClasses = style === 'white' ? styles.nav : cx(styles.nav, styles.black);
   return (
 
 
-  <nav className={styles.nav}>
+  <nav className={navClasses}>
 
     <div className={styles.nav__top}>
       <p className={styles.nav__phone}>+48 678 234098</p>

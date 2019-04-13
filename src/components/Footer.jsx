@@ -2,18 +2,20 @@ import React from 'react';
 import styles from '../styles/footer.module.scss'
 import Link from './Link';
 import { FormattedMessage } from 'react-intl';
+import { StaticQuery, graphql } from 'gatsby';
 
-const Footer = () => {
+const Footer = ({ data, lang }) => {
+     const currentCountryData = data.filter(el => el.language === lang)[0];
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__col}><Link className={styles.footer__logo} to="/">Komfrez Sp. z o. o.</Link></div>
             <div className={styles.footer__col}>
                 <adress>
-                    <p>ul. Traktorowa 67</p>
-                    <p>Łódź, 98-450</p>
-                    <p>Polska</p>
-                    <p>Tel: 567 356 890</p>
-                    <a href="mailto:office@komfrez.com">office@komfrez.com</a>
+                    <p>{currentCountryData.street}</p>
+                    <p>{currentCountryData.city}</p>
+                    <p>{currentCountryData.country}</p>
+                    <p>{currentCountryData.phone}</p>
+                    <a href={`mailto:${currentCountryData.mail}`}>{currentCountryData.mail}</a>
                 </adress> 
             </div>
             <div className={styles.footer__col}>
@@ -27,7 +29,8 @@ const Footer = () => {
             </nav>
             </div>
         </footer>
-    )
-};
-
+    
+    );
+  };
+  
 export default Footer;

@@ -12,8 +12,8 @@ import { translations, languages } from '../i18n';
 
 import Nav from '../components/Nav/Nav';
 import SEO from '../components/SEO';
-import Footer from '../components/Footer'
 import '../styles/layout.scss'
+import Footer from '../components/Footer'
 
 addLocaleData([...plData, ...enData, ...deData]);
 
@@ -22,28 +22,46 @@ const withLayout = customProps => PageComponent => props => {
   const { localeKey, hideLangs } = customProps;
 
   const pageContextValue = { custom: customProps, page: props.pageContext };
-
+  console.log(pageContextValue);
   const defaultLocale = languages.find(language => language.default).locale;
   const pageLocale = locale || defaultLocale;
   const pageTitle = locale ? translations[locale][`${localeKey}.title`] : '';
-
+  // console.log( props);
   return (
     <StaticQuery
       query={graphql`
-        query SiteTitleQuery {
+        query SiteTitleQuery($locale: String) {
           site {
             siteMetadata {
               title
             }
           }
+          komfrez {
+            contacts (
+        where: {
+          language: $locale
+        }
+      )
+      {
+        street
+        city
+        mail
+        tel
+        country
+        language
+      }
+          }
+   
         }
       `}
       render={data => (
         <IntlProvider locale={pageLocale} messages={translations[pageLocale]}>
+        
           <PageContext.Provider value={pageContextValue}>
+          {console.log(data)}
             <SEO title={pageTitle} lang={pageLocale} />
-            <Nav siteTitle={data.site.siteMetadata.title} hideLangs={hideLangs} />
-       
+            <Nav siteTitle={data.site.siteMetadata.title} hideLangs={hideLangs} style={localeKey === 'home' ? 'white' : 'black'}/>
+        {console.log(data)}
               {/* <main className='main'> */}
                 <PageComponent {...props} />
               {/* </main> */}
@@ -52,8 +70,7 @@ const withLayout = customProps => PageComponent => props => {
                 {` `}
                 <a href="https://www.gatsbyjs.org">Gatsby</a>
               </footer> */}
-              <Footer />
-     
+        <Footer data={data.komfrez.contacts} lang={pageLocale}/>
           </PageContext.Provider>
         </IntlProvider>
       )}

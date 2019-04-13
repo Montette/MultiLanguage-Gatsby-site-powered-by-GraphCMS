@@ -19,7 +19,8 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
   <>
    
   <HomeHero data={heroes} />
-  <main className='main'>
+  <main className='main main--home'>
+  {/* {console.log(pageContext)} */}
     <section className={styles.about}>
     <img src={needle} className={styles.about__needle}alt=""/>
       <h2 className={styles.about__heading}>{homeAbouts[0].title}</h2>
@@ -71,8 +72,9 @@ const customProps = {
 
 
 export const query = graphql`
-  query getServices($locale: String){
+  query getHomeData($locale: String){
     komfrez {
+    
       homePortfolios {
         image {
           width
@@ -106,9 +108,6 @@ export const query = graphql`
           width
           height
           handle
-        }
-        description {
-          html
         }
       }
       homeAbouts (

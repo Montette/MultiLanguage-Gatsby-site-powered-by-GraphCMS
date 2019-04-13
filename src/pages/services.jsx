@@ -1,25 +1,68 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-
-import withLayout from '../layout';
+import { graphql } from 'gatsby'
+import withLayout from '../layout'
 import Link from '../components/Link';
+import Image from '../components/Image';
+import HomeHero from '../components/HomeHero'
+import styles from '../styles/services.module.scss'
+import Button from '../components/Button'
+import GraphImg from 'graphcms-image'
+import cx from 'classnames'
+import SectionHeading from '../components/SectionHeading'
+import needle from '../images/needle.svg'
+import diddly from '../images/nic.svg'
+// import portfolioImg from '../images/services2.jpg'
 
-const SecondPage = () => (
+const ServicesPage = ({ data: { komfrez: {services}}, pageContext }) => {
+  return (
   <>
-    <h1>
-      <FormattedMessage id="page2.Hi from the second page" />
-    </h1>
-    <p>
-      <FormattedMessage id="page2.Welcome to page 2" />
-    </p>
-    <Link to="/">
-      <FormattedMessage id="page2.Go back to the homepage" />
-    </Link>
+  <main className='main'>
+  <SectionHeading subtitle='home.Read' title='home.What we can do for you' />
+    {services.map(service => {
+      return (
+        <section className={styles.service}>
+        
+        {/* <div className={styles.service__photo}> */}
+        <GraphImg image={service.image2} withWebp={true} className={styles.service__img} outerWrapperClassName={styles.service__imgWrapper}/>
+        {/* </div> */}
+        <div className={styles.service__content}>
+          <h2 className={styles.service__title}>{service.title}</h2>
+          <p dangerouslySetInnerHTML={{__html: service.description.html}}></p>
+        </div>
+        </section>
+      )
+    })}
+  </main>
   </>
-);
+)};
 
 const customProps = {
-  localeKey: 'page2',
+  localeKey: 'services', // same as file name in src/i18n/translations/your-lang/index.js
 };
 
-export default withLayout(customProps)(SecondPage);
+
+export const query = graphql`
+  query getServicesData($locale: String){
+    komfrez {
+      services (
+        where: {
+          language: $locale
+        }
+      ) {
+        title
+        id
+        image2 {
+          width
+          height
+          handle
+        }
+        description {
+          html
+        }
+      }
+    }  
+  }
+`
+
+export default withLayout(customProps)(ServicesPage);
