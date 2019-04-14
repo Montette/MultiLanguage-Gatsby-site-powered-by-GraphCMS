@@ -35,7 +35,7 @@ const IndexPage = ({ data: { komfrez: {heroes, services, homeAbouts, homePortfol
       {services.map(service => {
         return (
          <div key={service.id} className={cx(styles.services__service, styles.service)}> 
-            <Link className={styles.service__link} to={`/services/#${service.title}`}>
+            <Link className={styles.service__link} to={`/services/#${service.title.toLowerCase()}`}>
             <div className={cx(styles.service__overlay, styles.overlay)}>
             <p className={styles.overlay__text}>{service.intro}</p>
             <hr/>

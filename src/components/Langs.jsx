@@ -2,25 +2,27 @@ import React, { useContext } from 'react';
 import { navigate } from 'gatsby';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames';
-
+import cx from 'classnames';
 import languages from '../i18n/languages';
 import PageContext from '../layout/PageContext';
 import styles from '../styles/langs.module.scss'
 
 
 
-const LangButton = ({ label, chosen, onClick }) => (
+const LangButton = ({ label, chosen, onClick }) => {
+
+  return (
   <button
     className={classNames({[styles.langButton]: true, [styles.choosenButton]: chosen})}
     onClick={onClick}
   >
     {label}
   </button>
-);
+  )
+};
 
-const Langs = ({ intl: { locale } }) => {
+const Langs = ({ intl: { locale }, color }) => {
   const pageContext = useContext(PageContext);
-
   const handleSetLang = language => {
     const { originalPath } = pageContext.page;
     const newPathname = `/${language}${originalPath}`;
@@ -31,7 +33,7 @@ const Langs = ({ intl: { locale } }) => {
 
   if (!pageContext.custom.localeKey) return null;
   return (
-    <div className={styles.langContainer}>
+    <div className={cx(styles.langContainer, styles[color])}>
       {languages.map(language => (
         <LangButton
           key={language.locale}

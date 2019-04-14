@@ -1,18 +1,44 @@
 @import 'mixins';
 @import 'colors';
 
-.langButton, .choosenButton {
-    background: transparent;
-    color: $white;
-    border: none;
-    @include fluidSize(12px, 14px);
-    padding: .2em .6em;
-    margin-left: .5em;
-    &:hover {
-        cursor: pointer;
-    }
-}
+.langContainer {
 
-.choosenButton {
-    border: 1px solid $white;
+    .langButton,
+    .choosenButton {
+        background: transparent;
+        border: none;
+        @include fluidSize(12px, 14px);
+        padding: .2em .6em;
+        margin-left: .5em;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+
+    &.black {
+
+        & .langButton,
+        .choosenButton {
+            color: $lightBlack;
+        }
+
+        & .choosenButton {
+            border: 1px solid $lightBlack;
+        }
+    }
+
+    &.white {
+
+        & .langButton,
+        .choosenButton {
+            color: $white;
+        }
+
+        & .choosenButton {
+            border: 1px solid $white;
+        }
+    }
+
 }

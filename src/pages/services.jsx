@@ -21,11 +21,8 @@ const ServicesPage = ({ data: { komfrez: {services}}, pageContext }) => {
   <SectionHeading subtitle='home.Read' title='home.What we can do for you' />
     {services.map(service => {
       return (
-        <section className={styles.service}>
-        
-        {/* <div className={styles.service__photo}> */}
+        <section className={styles.service} id={service.title.toLowerCase()}>
         <GraphImg image={service.image2} withWebp={true} className={styles.service__img} outerWrapperClassName={styles.service__imgWrapper}/>
-        {/* </div> */}
         <div className={styles.service__content}>
           <h2 className={styles.service__title}>{service.title}</h2>
           <p dangerouslySetInnerHTML={{__html: service.description.html}}></p>

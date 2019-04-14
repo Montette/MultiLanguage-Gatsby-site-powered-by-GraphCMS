@@ -62,14 +62,7 @@ const withLayout = customProps => PageComponent => props => {
             <SEO title={pageTitle} lang={pageLocale} />
             <Nav siteTitle={data.site.siteMetadata.title} hideLangs={hideLangs} style={localeKey === 'home' ? 'white' : 'black'}/>
         {console.log(data)}
-              {/* <main className='main'> */}
                 <PageComponent {...props} />
-              {/* </main> */}
-              {/* <footer>
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-              </footer> */}
         <Footer data={data.komfrez.contacts} lang={pageLocale}/>
           </PageContext.Provider>
         </IntlProvider>

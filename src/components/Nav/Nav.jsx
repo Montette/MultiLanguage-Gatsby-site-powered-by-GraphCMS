@@ -23,7 +23,7 @@ const Nav = ({ siteTitle, hideLangs, style }) => {
 
     <div className={styles.nav__top}>
       <p className={styles.nav__phone}>+48 678 234098</p>
-      {!hideLangs && <Langs />}
+      {!hideLangs && <Langs color={style}/>}
     </div>
     <div className={styles.nav__bottom}>
       <Link className={styles.nav__logo} to="/">{siteTitle}</Link>
