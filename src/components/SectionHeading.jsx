@@ -11,9 +11,9 @@ const SectionHeading = (props) => {
 
     return (
        <header className={styles.heading}>
-           <p className={styles.heading__subtitle}><FormattedMessage id={props.subtitle}/></p>
+           <p className={styles.heading__subtitle}>{props.cms ? props.subtitle : <FormattedMessage id={props.subtitle}/>}</p>
            <h3 className={styles.heading__title}>
-           <FormattedMessage id={props.title}/>
+           {props.cms ? props.title : <FormattedMessage id={props.title}/>}
            {props.locale && props.section && <Typed 
                 strings={typedText(props.locale, props.section)}
                     typeSpeed={100}

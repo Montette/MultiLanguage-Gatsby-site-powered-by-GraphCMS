@@ -4,7 +4,7 @@
 
 
 
-.service {
+.section{
 
     display: flex;
     @include fluidSize(20px, 100px);
@@ -12,6 +12,11 @@
     // flex-wrap: wrap;
     &:first-of-type {
         margin-top: 1.5em;
+    }
+    &.about {
+        &:first-of-type {
+            margin-top: .5em;
+        }
     }
     &__imgWrapper {
         width: 40%;
@@ -37,6 +42,21 @@
         @include sectionText;
         @include fluidSize(13px, 16px);
         padding: 0 10em 0 3.5em;
+        @include flex(center, flex-start);
+        flex-direction: column;
+        // flex-wrap: wrap;
+        // p {
+        //     width: 100%;
+        // }
+        &.center {
+            text-align: center;
+        }
+        & span {
+            & p {
+                margin-top: 0;
+            }
+        }
+       
         @media (max-width: 1100px){
             padding: 0;
             margin: 3em 0;
@@ -44,14 +64,25 @@
         
     }
 
-    &:nth-child(odd) {
-        & .service__imgWrapper {
+    & a {
+        padding: .6em 1em;
+    }
+
+    &:nth-of-type(odd) {
+        & .section__imgWrapper {
             order: 2;
           
         }
 
-        & .service__content {
+        & .section__content {
             padding: 0 5em 0 7em;
+        }
+
+        & .section__content {
+            // align-items: flex-start;
+            // & a {
+            //     justify-self: flex-end !important;
+            // }
         }
     }
 
@@ -61,12 +92,12 @@
 
    @media(max-width: 1100px) {
    flex-wrap: wrap;
-    &:nth-child(odd) {
-        & .service__imgWrapper {
+    &:nth-of-type(odd) {
+        & .section__imgWrapper {
             order: 1;
           
         }
-        & .service__content {
+        & .section__content {
             order: 2;
             padding: 0;
         }

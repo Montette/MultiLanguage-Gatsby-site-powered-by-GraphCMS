@@ -5,13 +5,14 @@ import withLayout from '../layout'
 import Link from '../components/Link';
 import Image from '../components/Image';
 import HomeHero from '../components/HomeHero'
-import styles from '../styles/services.module.scss'
+// import styles from '../styles/services.module.scss'
 import Button from '../components/Button'
 import GraphImg from 'graphcms-image'
 import cx from 'classnames'
 import SectionHeading from '../components/SectionHeading'
 import needle from '../images/needle.svg'
 import diddly from '../images/nic.svg'
+import Section from '../components/Section'
 // import portfolioImg from '../images/services2.jpg'
 
 const ServicesPage = ({ data: { komfrez: {services}}, pageContext }) => {
@@ -21,13 +22,16 @@ const ServicesPage = ({ data: { komfrez: {services}}, pageContext }) => {
   <SectionHeading subtitle='home.Read' title='home.What we can do for you' />
     {services.map(service => {
       return (
-        <section className={styles.service} id={service.title.toLowerCase()}>
-        <GraphImg image={service.image2} withWebp={true} className={styles.service__img} outerWrapperClassName={styles.service__imgWrapper}/>
-        <div className={styles.service__content}>
-          <h2 className={styles.service__title}>{service.title}</h2>
-          <p dangerouslySetInnerHTML={{__html: service.description.html}}></p>
-        </div>
-        </section>
+        // <section className={styles.service} id={service.title.toLowerCase()}>
+        // <GraphImg image={service.image2} withWebp={true} className={styles.service__img} outerWrapperClassName={styles.service__imgWrapper}/>
+        // <div className={styles.service__content}>
+        //   <h2 className={styles.service__title}>{service.title}</h2>
+        //   <p dangerouslySetInnerHTML={{__html: service.description.html}}></p>
+        // </div>
+        // </section>
+        // <section>
+          <Section data={service}/>
+        // </section>
       )
     })}
   </main>
