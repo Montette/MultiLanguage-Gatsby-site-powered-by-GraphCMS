@@ -56,7 +56,7 @@ export const query = graphql`
           language: $locale
         }
       ) {
-        aboutSections {
+        aboutSections(orderBy: order_ASC) {
         title
         subtitle
         description {
