@@ -1,25 +1,55 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-
-import withLayout from '../layout';
+import { graphql } from 'gatsby'
+import withLayout from '../layout'
 import Link from '../components/Link';
+import Image from '../components/Image';
+import HomeHero from '../components/HomeHero'
+import styles from '../styles/portfolio.module.scss'
+import Button from '../components/Button'
+import GraphImg from 'graphcms-image'
+import cx from 'classnames'
+import SectionHeading from '../components/SectionHeading'
+import needle from '../images/needle.svg'
+import diddly from '../images/nic.svg'
+import Section from '../components/Section'
+// import portfolioImg from '../images/services2.jpg'
 
-const SecondPage = () => (
+const ServicesPage = ({ data: { komfrez: {galleryImages}}, pageContext }) => {
+  console.log(galleryImages);
+  return (
   <>
-    <h1>
-      <FormattedMessage id="page2.Hi from the second page" />
-    </h1>
-    <p>
-      <FormattedMessage id="page2.Welcome to page 2" />
-    </p>
-    <Link to="/">
-      <FormattedMessage id="page2.Go back to the homepage" />
-    </Link>
+  <main className='main'>
+  <SectionHeading subtitle='portfolio.Take a look' title='portfolio.At examples of our works' />
+  <section className={styles.gallery}>
+    {galleryImages.map(image => {
+      return (
+        <GraphImg image={image.image} withWebp={true} className={styles.gallery__img} outerWrapperClassName={styles.gallery__imgWrapper}/>
+      )
+    })}
+    </section>
+  </main>
   </>
-);
+)};
 
 const customProps = {
-  localeKey: 'page2',
+  localeKey: 'portfolio', // same as file name in src/i18n/translations/your-lang/index.js
 };
 
-export default withLayout(customProps)(SecondPage);
+
+export const query = graphql`
+  query getPortfolio{
+    komfrez {
+      galleryImages {
+        image {
+          width
+          height
+          handle
+        }
+        alt
+      }
+    }  
+  }
+`
+
+export default withLayout(customProps)(ServicesPage);

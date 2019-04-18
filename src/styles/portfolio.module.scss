@@ -1,0 +1,29 @@
+@import 'mixins';
+@import 'colors';
+.gallery {
+    @include flex(space-between, center);
+    margin-top: 5em;
+    flex-wrap: wrap;
+    &__imgWrapper {
+        width: 30%;
+        @media(max-width: 800px) {
+            width: 100%;
+            @include flex(center, center);
+        }
+        margin-bottom: 2em;
+        
+    }
+    &__img {
+        // max-width: 50%;
+        max-width: 100%;
+        @media(max-width: 800px) {
+            max-width: 70%;
+            height: auto;
+        }
+        @media (max-width: 600px){
+            max-width: 100%;
+            height: auto;
+           max-height: 300px;
+        }
+    }
+}
