@@ -22,9 +22,9 @@ const ContactPage = () => {
   <SectionHeading subtitle='home.Read' title='home.What we can do for you' />
   <div className={styles.container}>
   <form name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        // method="post"
+        // data-netlify="true"
+        // data-netlify-honeypot="bot-field"
         className={styles.form} id="form">
 				<div className={styles.form__col}>
 					<input type="text" className={styles.form__input} name="name" id="name" required/>
