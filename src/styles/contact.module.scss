@@ -1,0 +1,82 @@
+@import 'mixins';
+@import 'colors';
+.container {
+    @include flex(center, center);
+}
+.form {
+    @include fluidSize(12px, 16px);
+    margin-top: 6em;
+    max-width: 800px;
+
+
+    &__col {
+        width: 100%;
+        text-align: left;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 2.5em;
+    }
+
+    &__input {
+        width: 100%;
+        background-color: transparent;
+        color: #2E2F30;
+        height: 40px;
+        border: none;
+        border-bottom: 2px solid#D8D8D8;
+        border-radius: 0px;
+
+        &:focus {
+            outline: none;
+            border-color: black;
+        }
+
+        &:required {
+            box-shadow: none;
+        }
+
+        &:focus,
+        &:valid {
+            &+.form__label {
+                bottom: 105%;
+                font-size: .8em;
+
+            }
+        }
+
+        &.textarea {
+            margin-top: 0;
+            padding-top: 20px;
+        }
+
+
+        &.warning {
+            border-bottom-color: black;
+        }
+    }
+
+
+    &__label {
+        position: absolute;
+        color: #2E2F30;
+        left: 0;
+        bottom: 42%;
+        transition: .5s;
+
+    }
+    & textarea {
+        background: transparent;
+        text-align: left;
+        border: none;
+        color: #e0cac0;
+        font-weight: 400;
+        resize: none;
+        font-size: 0;
+        outline: none;
+        display: block;
+        line-height: 1;
+        padding: 2px;
+        min-height: 1px;
+        border-bottom: 2px solid#D8D8D8;
+    }
+}
