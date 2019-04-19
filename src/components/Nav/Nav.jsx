@@ -37,6 +37,7 @@ const Nav = ({ siteTitle, hideLangs, style }) => {
             <span></span>
       </button>
       <ul className={menuClasses}>
+      <li className={styles.nav__link}><Link activeClassName={styles.active} to="/">Home</Link></li>
         <li className={styles.nav__link}><Link activeClassName={styles.active} to="/about"><FormattedMessage id="nav.About us" /></Link></li>
         <li className={styles.nav__link}><Link activeClassName={styles.active} to="/services"><FormattedMessage id="nav.Services" /></Link></li>
         <li className={styles.nav__link}><Link activeClassName={styles.active} to="/portfolio"><FormattedMessage id="nav.Portfolio" /></Link></li>

@@ -146,6 +146,15 @@
                 }
                 
             }
+            & .nav__link {
+        
+                a {
+                    &.active {
+                        border-color: $lightBlack;
+                    }
+                }
+                
+            }
         }
     }
 
