@@ -15,8 +15,9 @@ import diddly from '../images/nic.svg'
 import Section from '../components/Section'
 // import portfolioImg from '../images/services2.jpg'
 
-const ServicesPage = ({ data: { komfrez: {galleryImages}}, pageContext }) => {
+const ServicesPage = ({ data: { komfrez: {galleryImages, informations}}, pageContext }) => {
   console.log(galleryImages);
+  console.log(informations);
   return (
   <>
   <main className='main'>
@@ -28,6 +29,7 @@ const ServicesPage = ({ data: { komfrez: {galleryImages}}, pageContext }) => {
       )
     })}
     </section>
+    <p>* {informations[0].text}</p>
   </main>
   </>
 )};
@@ -38,7 +40,7 @@ const customProps = {
 
 
 export const query = graphql`
-  query getPortfolio{
+  query getPortfolio($locale: String){
     komfrez {
       galleryImages {
         image {
@@ -48,6 +50,11 @@ export const query = graphql`
         }
         alt
       }
+      informations(where: {
+          language: $locale
+        }){
+          text
+        }
     }  
   }
 `
