@@ -2,12 +2,14 @@
 @import 'mixins';
 
 .footer {
+    &__container {
     display: flex;
     color: $textColor;
     @include fluidSize(10px, 15px);
     border-top: 1px solid $lightGrey;
     padding: 2em 0 2em 1em;
     flex-wrap: wrap;
+    }
     &__logo {
         font-size: 1.5em;
         font-weight: bold;

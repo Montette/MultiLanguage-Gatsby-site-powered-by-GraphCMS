@@ -15,6 +15,8 @@ import SEO from '../components/SEO';
 import '../styles/layout.scss'
 import Footer from '../components/Footer'
 
+
+
 addLocaleData([...plData, ...enData, ...deData]);
 
 const withLayout = customProps => PageComponent => props => {
@@ -27,6 +29,8 @@ const withLayout = customProps => PageComponent => props => {
   const pageLocale = locale || defaultLocale;
   const pageTitle = locale ? translations[locale][`${localeKey}.title`] : '';
   // console.log( props);
+  
+
   return (
     <StaticQuery
       query={graphql`
@@ -64,6 +68,8 @@ const withLayout = customProps => PageComponent => props => {
         {console.log(data)}
                 <PageComponent {...props} />
         <Footer data={data.komfrez.contacts} lang={pageLocale}/>
+   
+        
           </PageContext.Provider>
         </IntlProvider>
       )}

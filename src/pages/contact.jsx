@@ -70,7 +70,7 @@ class ContactPage extends Component  {
 					<label htmlFor="message" className={cx(styles.form__label, styles.textarea)}>Jak możemy pomóc?</label>
 				</div>
 				<div className={cx(styles.form__col, styles.form__button)}>
-               <Button  text="Wyślij wiadomość" type="submit"/>
+               <Button  text="Wyślij wiadomość" type="button"/>
 				</div>
 
 			</form>
