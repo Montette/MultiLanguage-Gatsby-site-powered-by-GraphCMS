@@ -21,6 +21,7 @@ const ServicesPage = ({ data: { komfrez: {services}}, pageContext }) => {
   <main className='main'>
   <SectionHeading subtitle='home.Read' title='home.What we can do for you' />
     {services.map(service => {
+      {console.log(service)}
       return (
         // <section className={styles.service} id={service.title.toLowerCase()}>
         // <GraphImg image={service.image2} withWebp={true} className={styles.service__img} outerWrapperClassName={styles.service__imgWrapper}/>
@@ -52,6 +53,8 @@ export const query = graphql`
         }
       ) {
         title
+        buttonText
+        buttonLink
         id
         image2 {
           width
