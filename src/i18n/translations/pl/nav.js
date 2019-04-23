@@ -4,5 +4,6 @@ export default {
     'Services': 'Usługi',
     'Portfolio': 'Portfolio',
     'Contact': 'Kontakt',
+    'Privacy': 'Polityka Prywatności'
   };
   
