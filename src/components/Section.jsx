@@ -10,11 +10,13 @@ import { FormattedMessage } from 'react-intl'
 import SectionHeading from './SectionHeading'
 import cx from 'classnames'
 
-const Section = ({data, page}) => {
+
+const Section = ({data, page, openModal}) => {
  
 
       console.log(data);
       const isCentered = !data.image && page === 'about';
+      
       
     return (
      
@@ -37,7 +39,7 @@ const Section = ({data, page}) => {
             {data.title && data.subtitle &&  <SectionHeading subtitle={null} title={data.subtitle} cms={true}/>}
             <div dangerouslySetInnerHTML={{__html: data.description.html}}></div>
             {data.buttonText && (
-                <Button cms={true} text={data.buttonText} href={data.buttonLink}/>
+                <Button type={data.buttonLink ? 'link' : 'button'}cms={true} text={data.buttonText} href={data.buttonLink} handleClick={openModal}/>
             )}
             </div>
         </section>

@@ -3,11 +3,16 @@ import styles from '../styles/footer.module.scss'
 import Link from './Link';
 import { FormattedMessage } from 'react-intl';
 import { StaticQuery, graphql } from 'gatsby';
+import {useState, useEffect} from 'react';
+import Cookies from './Cookies'
+
 
 const Footer = ({ data, lang }) => {
      const currentCountryData = data.filter(el => el.language === lang)[0];
+     const [isCookiesOpen, closeCookiesInfo] = useState(true);
     return (
         <footer className={styles.footer}>
+        <div className={styles.footer__container}>
             <div className={styles.footer__col}><Link className={styles.footer__logo} to="/">Komfrez Sp. z o. o.</Link></div>
             <div className={styles.footer__col}>
                 <adress>
@@ -25,9 +30,14 @@ const Footer = ({ data, lang }) => {
                     <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/services"><FormattedMessage id="nav.Services" /></Link></li>
                     <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/portfolio"><FormattedMessage id="nav.Portfolio" /></Link></li>
                     <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/contact"><FormattedMessage id="nav.Contact" /></Link></li>
+                    <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/privacy-policy"><FormattedMessage id="nav.Privacy" /></Link></li>
                 </ul>
             </nav>
             </div>
+            </div>
+            {isCookiesOpen &&
+          <Cookies closeCookies={()=> closeCookiesInfo(false)}/>
+            }
         </footer>
     
     );

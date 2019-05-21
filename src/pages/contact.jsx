@@ -37,12 +37,15 @@ class ContactPage extends Component  {
 		.then(res => res.json())
 		.then(res => {
 			console.log(res);
+<<<<<<< HEAD
 			this.setState({
 				name: '',
 				phone: '',
 				email: '',
 				message: ''
 			})
+=======
+>>>>>>> da25c5af94fe6a910b58b732b4995cabf1c6edbe
 		})
 	}
 
