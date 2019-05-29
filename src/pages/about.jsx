@@ -9,7 +9,9 @@ const AboutPage = ({ data: { komfrez} }) => {
   console.log(aboutSections);
   return (
   <main className='main'>
+
   <SectionHeading subtitle='about.A few words' title='about.About our company' />
+
     {aboutSections.map(section => {
       return (
         <Section data={section} page='about'/>

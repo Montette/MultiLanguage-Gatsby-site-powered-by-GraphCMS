@@ -14,6 +14,7 @@ import Nav from '../components/Nav/Nav';
 import SEO from '../components/SEO';
 import '../styles/layout.scss'
 import Footer from '../components/Footer'
+import {useState, useEffect} from 'react';
 
 
 
@@ -30,7 +31,11 @@ const withLayout = customProps => PageComponent => props => {
   const pageTitle = locale ? translations[locale][`${localeKey}.title`] : '';
   // console.log( props);
   
-
+  useEffect(() => {
+    let WOW = require('../../node_modules/wow.js/dist/wow');
+      const wow = new WOW(); wow.init();
+  
+  });
   return (
     <StaticQuery
       query={graphql`
