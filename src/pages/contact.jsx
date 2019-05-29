@@ -6,13 +6,47 @@ import cx from 'classnames';
 import SectionHeading from '../components/SectionHeading';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { FormattedMessage } from 'react-intl';
+import {useState} from 'react';
 import contact from '../i18n/translations/de/contact';
+import Modal from 'react-modal';
 
-class ContactPage extends Component {
-  render() {
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+		backgroundColor       : '#FCFBF3',
+		padding							: '40px'
+  },
+  overlay : {
+    zIndex                : '1000'
+  }
+};
+
+
+const ContactPage = ()=> {
+
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [isError, setIsError] = useState(false);
+ 
     return (
       <>
         <main className="main">
+				<Modal
+                isOpen={isModalOpen}
+                onRequestClose={()=> setIsModalOpen(false)}
+                contentLabel='test'
+                style={customStyles}
+              >
+            <div className={styles.container}>
+							{isError ? <FormattedMessage id='contact.An error has occurred in the connection. Please try again later.' /> : <FormattedMessage id='contact.Message was sent successfully.' />}
+							
+						</div>
+          
+          </Modal>
           <SectionHeading subtitle="contact.Interested in cooperation?" title="contact.Send us a message" />
           <div className={styles.container}>
             <Formik
@@ -68,16 +102,19 @@ class ContactPage extends Component {
                 ).then(
                   response => {
                     console.log(response);
-                    if (response.ok) {
-                      console.log('message was sent');
+                    if (response.ok) {		
                     } else {
-                      console.log('error');
-                    }
-                    setSubmitting(false);
+                      setIsError(true);
+										}
+										setIsModalOpen(true);
+										setSubmitting(false);
+										
                     resetForm();
                   },
                   error => {
-                    console.log(error);
+										console.log(error);
+										setIsError(true);
+										setIsModalOpen(true);
                     setSubmitting(false);
                   },
                 );
@@ -169,7 +206,7 @@ class ContactPage extends Component {
       </>
     );
   }
-}
+
 
 const customProps = {
   localeKey: 'contact', // same as file name in src/i18n/translations/your-lang/index.js
