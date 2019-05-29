@@ -1,17 +1,7 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby'
 import withLayout from '../layout'
-import Link from '../components/Link';
-import Image from '../components/Image';
-import HomeHero from '../components/HomeHero'
-// import styles from '../styles/services.module.scss'
-import Button from '../components/Button'
-import GraphImg from 'graphcms-image'
-import cx from 'classnames'
 import SectionHeading from '../components/SectionHeading'
-import needle from '../images/needle.svg'
-import diddly from '../images/nic.svg'
 import Section from '../components/Section'
 import {useState, useEffect} from 'react';
 import Modal from 'react-modal';
