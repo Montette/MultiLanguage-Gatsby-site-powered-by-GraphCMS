@@ -25,7 +25,7 @@ const ServicesPage = ({ data: { komfrez: {galleryImages, informations}}, pageCon
   <section className={styles.gallery}>
     {galleryImages.map(image => {
       return (
-        <GraphImg image={image.image} withWebp={true} className={styles.gallery__img} outerWrapperClassName={styles.gallery__imgWrapper}/>
+        <GraphImg image={image.image} withWebp={true} className={cx(styles.gallery__img, 'wow fadeInUp')} outerWrapperClassName={styles.gallery__imgWrapper}/>
       )
     })}
     </section>

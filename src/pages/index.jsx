@@ -33,7 +33,7 @@ const IndexPage = ({
             dangerouslySetInnerHTML={{ __html: homeAbouts[0].text.html }}
           />
 
-          <Button text="home.See more" style="black" />
+          <Button text="home.See more" style="black" href="/about"/>
         </section>
         <section className={styles.services}>
        
