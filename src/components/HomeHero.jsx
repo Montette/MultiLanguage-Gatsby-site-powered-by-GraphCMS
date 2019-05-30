@@ -30,7 +30,7 @@ const HomeHero = ({ data }) => {
                         <div className={styles.hero__text}>
                             <p className={styles.hero__subtitle}>{slide.subtitle}</p>
                             <h1 className={styles.hero__title}>{slide.title}</h1>
-                            <Button text="home.See more" style="white"/>
+                            {/* <Button text="home.See more" style="white"/> */}
                         </div>
                     </div>
                 )

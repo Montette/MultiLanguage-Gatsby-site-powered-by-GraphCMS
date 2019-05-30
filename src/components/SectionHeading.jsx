@@ -10,7 +10,7 @@ import typedText from '../utils/typedTexts.js'
 const SectionHeading = (props) => {
 
     return (
-       <header className={styles.heading}>
+       <header className={cx(styles.heading, 'wow fadeInUp')}>
            <p className={styles.heading__subtitle}>{props.cms ? props.subtitle : <FormattedMessage id={props.subtitle}/>}</p>
            <h3 className={styles.heading__title}>
            {props.cms ? props.title : <FormattedMessage id={props.title}/>}
