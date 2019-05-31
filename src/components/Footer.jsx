@@ -13,7 +13,7 @@ const Footer = ({ data, lang }) => {
     return (
         <footer className={styles.footer}>
         <div className={styles.footer__container}>
-            <div className={styles.footer__col}><Link className={styles.footer__logo} to="/">Komfrez Sp. z o. o.</Link></div>
+            <div className={styles.footer__col}><Link className={styles.footer__logo} to="/">Komfrez</Link></div>
             <div className={styles.footer__col}>
                 <adress>
                     <p>{currentCountryData.street}</p>
