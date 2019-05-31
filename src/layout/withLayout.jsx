@@ -69,7 +69,7 @@ const withLayout = customProps => PageComponent => props => {
           <PageContext.Provider value={pageContextValue}>
           {console.log(data)}
             <SEO title={pageTitle} lang={pageLocale} />
-            <Nav siteTitle={data.site.siteMetadata.title} hideLangs={hideLangs} style={localeKey === 'home' ? 'white' : 'black'}/>
+            <Nav phone={data.komfrez.contacts[0].tel} siteTitle={data.site.siteMetadata.title} hideLangs={hideLangs} style={localeKey === 'home' ? 'white' : 'black'}/>
         {console.log(data)}
                 <PageComponent {...props} />
         <Footer data={data.komfrez.contacts} lang={pageLocale}/>

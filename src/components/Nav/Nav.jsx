@@ -9,7 +9,7 @@ import {useState, useEffect} from 'react';
 import cx from 'classnames';
 // import '../../styles/nav.scss'
 
-const Nav = ({ siteTitle, hideLangs, style }) => {
+const Nav = ({ siteTitle, hideLangs, style, phone }) => {
   console.log(style);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -22,7 +22,7 @@ const Nav = ({ siteTitle, hideLangs, style }) => {
   <nav className={navClasses}>
 
     <div className={styles.nav__top}>
-      <p className={styles.nav__phone}>+48 678 234098</p>
+      <p className={styles.nav__phone}>+48 {phone}</p>
       {!hideLangs && <Langs color={style}/>}
     </div>
     <div className={styles.nav__bottom}>
