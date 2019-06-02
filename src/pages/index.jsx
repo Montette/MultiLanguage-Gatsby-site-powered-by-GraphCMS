@@ -1,9 +1,7 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby';
 import withLayout from '../layout';
 import Link from '../components/Link';
-import Image from '../components/Image';
 import HomeHero from '../components/HomeHero';
 import styles from '../styles/index.module.scss';
 import Button from '../components/Button';
@@ -24,7 +22,6 @@ const IndexPage = ({
     <>
       <HomeHero data={heroes} />
       <main className="main main--home">
-        {/* {console.log(pageContext)} */}
         <section className={styles.about}>
           <img src={needle} className={cx(styles.about__needle, 'wow fadeInUp')} alt="" />
           <h2 className={cx(styles.about__heading, 'wow fadeInUp')}>{homeAbouts[0].title}</h2>
@@ -33,12 +30,10 @@ const IndexPage = ({
             dangerouslySetInnerHTML={{ __html: homeAbouts[0].text.html }}
           />
 
-          <Button text="home.See more" style="black" href="/about"/>
+          <Button text="home.See more" style="black" href="/about" />
         </section>
         <section className={styles.services}>
-       
-            <SectionHeading subtitle="home.Read" title="home.What we can do for you" />
-      
+          <SectionHeading subtitle="home.Read" title="home.What we can do for you" />
           <div className={styles.services__container}>
             {services.map(service => {
               return (
@@ -80,7 +75,7 @@ const IndexPage = ({
 
             <div className={cx(styles.portfolio__textBlock)}>
               <SectionHeading subtitle="home.Take a look" title="home.What can we sew for you" />
-              <Button text="home.See portfolio" style="black" href="/portfolio"/>
+              <Button text="home.See portfolio" style="black" href="/portfolio" />
             </div>
           </div>
         </section>

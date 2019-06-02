@@ -5,20 +5,17 @@ import classNames from 'classnames';
 import cx from 'classnames';
 import languages from '../i18n/languages';
 import PageContext from '../layout/PageContext';
-import styles from '../styles/langs.module.scss'
-
-
+import styles from '../styles/langs.module.scss';
 
 const LangButton = ({ label, chosen, onClick }) => {
-
   return (
-  <button
-    className={classNames({[styles.langButton]: true, [styles.choosenButton]: chosen})}
-    onClick={onClick}
-  >
-    {label}
-  </button>
-  )
+    <button
+      className={classNames({ [styles.langButton]: true, [styles.choosenButton]: chosen })}
+      onClick={onClick}
+    >
+      {label}
+    </button>
+  );
 };
 
 const Langs = ({ intl: { locale }, color }) => {

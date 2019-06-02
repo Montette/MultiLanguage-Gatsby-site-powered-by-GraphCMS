@@ -12,11 +12,9 @@ import { translations, languages } from '../i18n';
 
 import Nav from '../components/Nav/Nav';
 import SEO from '../components/SEO';
-import '../styles/layout.scss'
-import Footer from '../components/Footer'
-import {useState, useEffect} from 'react';
-
-
+import '../styles/layout.scss';
+import Footer from '../components/Footer';
+import { useEffect } from 'react';
 
 addLocaleData([...plData, ...enData, ...deData]);
 
@@ -25,16 +23,14 @@ const withLayout = customProps => PageComponent => props => {
   const { localeKey, hideLangs } = customProps;
 
   const pageContextValue = { custom: customProps, page: props.pageContext };
-  console.log(pageContextValue);
   const defaultLocale = languages.find(language => language.default).locale;
   const pageLocale = locale || defaultLocale;
   const pageTitle = locale ? translations[locale][`${localeKey}.title`] : '';
-  // console.log( props);
-  
+
   useEffect(() => {
     let WOW = require('../../node_modules/wow.js/dist/wow');
-      const wow = new WOW(); wow.init();
-  
+    const wow = new WOW();
+    wow.init();
   });
   return (
     <StaticQuery
@@ -46,35 +42,30 @@ const withLayout = customProps => PageComponent => props => {
             }
           }
           komfrez {
-            contacts (
-        where: {
-          language: $locale
-        }
-      )
-      {
-        street
-        city
-        mail
-        tel
-        country
-        language
-      }
+            contacts(where: { language: $locale }) {
+              street
+              city
+              mail
+              tel
+              country
+              language
+            }
           }
-   
         }
       `}
       render={data => (
         <IntlProvider locale={pageLocale} messages={translations[pageLocale]}>
-        
           <PageContext.Provider value={pageContextValue}>
-          {console.log(data)}
             <SEO title={pageTitle} lang={pageLocale} />
-            <Nav phone={data.komfrez.contacts[0].tel} siteTitle={data.site.siteMetadata.title} hideLangs={hideLangs} style={localeKey === 'home' ? 'white' : 'black'}/>
-        {console.log(data)}
-                <PageComponent {...props} />
-        <Footer data={data.komfrez.contacts} lang={pageLocale}/>
-   
-        
+            <Nav
+              phone={data.komfrez.contacts[0].tel}
+              siteTitle={data.site.siteMetadata.title}
+              hideLangs={hideLangs}
+              style={localeKey === 'home' ? 'white' : 'black'}
+            />
+
+            <PageComponent {...props} />
+            <Footer data={data.komfrez.contacts} lang={pageLocale} />
           </PageContext.Provider>
         </IntlProvider>
       )}

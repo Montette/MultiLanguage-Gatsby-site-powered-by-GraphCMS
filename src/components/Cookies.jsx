@@ -6,7 +6,6 @@ import Link from '../components/Link';
 
 
 const Cookies = (props) => {
-    console.log(props);
     return (
         <div className={styles.cookies}>
             <p className={styles.cookies__text}><FormattedMessage id="cookies.Cookies short" />

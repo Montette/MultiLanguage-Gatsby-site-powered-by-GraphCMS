@@ -2,8 +2,7 @@ import React from 'react';
 import styles from '../styles/footer.module.scss'
 import Link from './Link';
 import { FormattedMessage } from 'react-intl';
-import { StaticQuery, graphql } from 'gatsby';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import Cookies from './Cookies'
 
 
