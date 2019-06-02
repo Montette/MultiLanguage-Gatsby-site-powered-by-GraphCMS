@@ -19,7 +19,7 @@ const Nav = ({ siteTitle, hideLangs, style, phone }) => {
   return (
 
 
-  <nav className={navClasses}>
+  <nav className={!isMenuOpen ? navClasses : cx(navClasses, styles.active)}>
 
     <div className={styles.nav__top}>
       <p className={styles.nav__phone}>+48 {phone}</p>
@@ -38,10 +38,10 @@ const Nav = ({ siteTitle, hideLangs, style, phone }) => {
       </button>
       <ul className={menuClasses}>
       <li className={styles.nav__link}><Link activeClassName={styles.active} to="/">Home</Link></li>
-        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/about"><FormattedMessage id="nav.About us" /></Link></li>
-        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/services"><FormattedMessage id="nav.Services" /></Link></li>
+        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/o-nas"><FormattedMessage id="nav.About us" /></Link></li>
+        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/uslugi"><FormattedMessage id="nav.Services" /></Link></li>
         <li className={styles.nav__link}><Link activeClassName={styles.active} to="/portfolio"><FormattedMessage id="nav.Portfolio" /></Link></li>
-        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/contact"><FormattedMessage id="nav.Contact" /></Link></li>
+        <li className={styles.nav__link}><Link activeClassName={styles.active} to="/kontakt"><FormattedMessage id="nav.Contact" /></Link></li>
       </ul>
     </div>
   </nav>

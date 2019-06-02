@@ -45,7 +45,7 @@ const ServicesPage = ({ data: { komfrez: {services}}, pageContext }) => {
           
           </Modal>
           }
-          <Section data={service} openModal={()=>setIsModalOpen(true)}/>
+          <Section id={service.title.toLowerCase()} data={service} openModal={()=>setIsModalOpen(true)}/>
           </>
       )
     })}

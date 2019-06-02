@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Komfrez`,
-    description: ``,
+    description: `Firma Komfrez zajmuje się szyciem specjalistycznych wyrobów tekstylnych, wykorzystywanych w przemyśle oraz konfekcji odzieżowych.`,
     author: `Monika Radosiewicz`,
-    keywords: [``],
+    keywords: [`szwalnia łódź`,`usługi szycia`, `krojenie`, `konfekcjonowanie`, 'przeszycia łódź', 'krojownia'],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

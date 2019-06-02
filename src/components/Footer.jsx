@@ -26,10 +26,10 @@ const Footer = ({ data, lang }) => {
             <div className={styles.footer__col}>
             <nav>
                 <ul className={styles.footer__nav}>
-                    <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/about"><FormattedMessage id="nav.About us" /></Link></li>
-                    <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/services"><FormattedMessage id="nav.Services" /></Link></li>
+                    <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/o-nas"><FormattedMessage id="nav.About us" /></Link></li>
+                    <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/uslugi"><FormattedMessage id="nav.Services" /></Link></li>
                     <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/portfolio"><FormattedMessage id="nav.Portfolio" /></Link></li>
-                    <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/contact"><FormattedMessage id="nav.Contact" /></Link></li>
+                    <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/kontakt"><FormattedMessage id="nav.Contact" /></Link></li>
                     <li className={styles.footer__navLink}><Link activeClassName={styles.active} to="/privacy-policy"><FormattedMessage id="nav.Privacy" /></Link></li>
                 </ul>
             </nav>

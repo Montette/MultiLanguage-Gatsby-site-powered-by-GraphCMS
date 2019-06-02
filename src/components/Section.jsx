@@ -11,7 +11,7 @@ import SectionHeading from './SectionHeading'
 import cx from 'classnames'
 
 
-const Section = ({data, page, openModal}) => {
+const Section = ({data, page, openModal, id}) => {
  
 
       console.log(data);
@@ -20,13 +20,13 @@ const Section = ({data, page, openModal}) => {
       
     return (
      
-        <section className={page === 'about' ? cx(styles.section, styles.about, 'wow fadeInUp') : cx(styles.section, 'wow fadeInUp')} >
+        <section id={id} className={page === 'about' ? cx(styles.section, styles.about, 'wow fadeInUp') : cx(styles.section, 'wow fadeInUp')} >
             {data.image && <GraphImg image={data.image} withWebp={true} className={styles.section__img} outerWrapperClassName={styles.section__imgWrapper}/>}
             {data.image2 && <GraphImg image={data.image2} withWebp={true} className={styles.section__img} outerWrapperClassName={styles.section__imgWrapper}/>}
             <div className={isCentered  ? cx(styles.section__content, styles.center) : styles.section__content }>
             {data.title && !data.subtitle && <h2 className={styles.section__title}>{data.title}</h2>}
             {data.title && data.subtitle &&  <SectionHeading subtitle={null} title={data.subtitle} cms={true}/>}
-            <div dangerouslySetInnerHTML={{__html: data.description.html}}></div>
+            <div  dangerouslySetInnerHTML={{__html: data.description.html}}></div>
             {data.buttonText && (
                 <Button type={data.buttonLink ? 'link' : 'button'}cms={true} text={data.buttonText} href={data.buttonLink} handleClick={openModal}/>
             )}
