@@ -41,7 +41,7 @@ const IndexPage = ({
                   <div className="wow fadeInUp" data-wow-delay="0.2s">
                     <Link
                       className={styles.service__link}
-                      to={`/services/#${service.title.toLowerCase()}`}
+                      to={`/uslugi/#${service.title.toLowerCase()}`}
                     >
                       {' '}
                       <div className={cx(styles.service__overlay, styles.overlay)}>
@@ -56,7 +56,7 @@ const IndexPage = ({
                       />
                     </Link>
                     <h3 className={styles.service__title}>
-                      <Link to={`/services/#${service.title}`}>{service.title} </Link>{' '}
+                      <Link to={`/uslugi/#${service.title}`}>{service.title} </Link>{' '}
                     </h3>{' '}
                   </div>{' '}
                 </div>

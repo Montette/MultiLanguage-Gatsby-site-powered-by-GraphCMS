@@ -21,7 +21,7 @@ const ServicesPage = ({
           title="portfolio.At examples of our works"
         />
         <section className={styles.gallery}>
-          {galleryImages.map(image => {
+          {galleryImages.reverse().map(image => {
             return (
               <GraphImg
                 image={image.image}
