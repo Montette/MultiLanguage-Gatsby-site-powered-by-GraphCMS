@@ -30,7 +30,7 @@ const IndexPage = ({
             dangerouslySetInnerHTML={{ __html: homeAbouts[0].text.html }}
           />
 
-          <Button text="home.See more" style="black" href="/about" />
+          <Button text="home.See more" style="black" href="/o-nas" />
         </section>
         <section className={styles.services}>
           <SectionHeading subtitle="home.Read" title="home.What we can do for you" />
@@ -90,7 +90,7 @@ const IndexPage = ({
             />
           </div>
           <div className="wow fadeInUp" data-wow-delay=".5s">
-            <Button text="home.Write to us" style="black" href="/contact" />
+            <Button text="home.Write to us" style="black" href="/kontakt" />
           </div>
         </section>
       </main>
