@@ -22,7 +22,7 @@ const Nav = ({ siteTitle, hideLangs, style, phone }) => {
       </div>
       <div className={styles.nav__bottom}>
         <Link className={styles.nav__logo} to="/">
-          {siteTitle}
+          Komfrez
         </Link>
         <button
           aria-label={isMenuOpen ? 'close menu' : 'open menu'}
