@@ -17,7 +17,7 @@ const Nav = ({ siteTitle, hideLangs, style, phone }) => {
   return (
     <nav className={!isMenuOpen ? navClasses : cx(navClasses, styles.active)}>
       <div className={styles.nav__top}>
-        <p className={styles.nav__phone}>+48 {phone}</p>
+        <p className={styles.nav__phone}>{phone}</p>
         {!hideLangs && <Langs color={style} />}
       </div>
       <div className={styles.nav__bottom}>

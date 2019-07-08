@@ -18,7 +18,7 @@ const Footer = ({ data, lang }) => {
                     <p>{currentCountryData.street}</p>
                     <p>{currentCountryData.city}</p>
                     <p>{currentCountryData.country}</p>
-                    <p>{currentCountryData.phone}</p>
+                    <p>{currentCountryData.tel}</p>
                     <a href={`mailto:${currentCountryData.mail}`}>{currentCountryData.mail}</a>
                 </adress> 
             </div>

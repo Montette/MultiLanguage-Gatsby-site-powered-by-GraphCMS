@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Komfrez`,
-    description: `Firma Komfrez zajmuje się szyciem specjalistycznych wyrobów tekstylnych, wykorzystywanych w przemyśle oraz konfekcji odzieżowych.`,
+    title: `Komfrez - profesjonalna szwalnia w Łodzi - szycie usługowe, przeszycia, krawiectwo`,
+    description: `Szwalnia usługowa Komfrez zajmuje się szyciem specjalistycznych wyrobów tekstylnych, oraz konfekcji odzieżowych. Oferujemy usługi przeszycia i konfekcjonowania, posiadamy profesjonalną krojownię.`,
     author: `Monika Radosiewicz`,
     keywords: [`szwalnia łódź`,`usługi szycia`, `krojenie`, `konfekcjonowanie`, 'przeszycia łódź', 'krojownia'],
   },
