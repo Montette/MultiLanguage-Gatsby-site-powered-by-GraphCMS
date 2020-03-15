@@ -11,7 +11,7 @@
             @include flex(center, center);
         }
         margin-bottom: 2em;
-        
+
     }
     &__img {
         // max-width: 50%;
@@ -27,3 +27,56 @@
         }
     }
 }
+
+
+.mask {
+    &__infowrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__info {
+        & p {
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.3;
+        }
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    &__spec {
+        padding-top: 40px;
+        padding-left: 90px;
+        @media(max-width: 1088px) {
+            width: 100%;
+            padding-left: 0;
+            padding-top: 20px;
+        }
+    }
+
+    &__sale {
+        & li {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__desc {
+        margin-top: 40px;
+        & p {
+            line-height: 1.6;
+            max-width: 1000px;
+        }
+    }
+
+    &__table {
+        & table {
+            & td {
+                min-width: 100px;
+                padding: 15px;
+                border: 1px solid black;
+            }
+        }
+    }
+}
+
