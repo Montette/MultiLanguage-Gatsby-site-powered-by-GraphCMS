@@ -10,7 +10,25 @@ import cx from 'classnames';
 import SectionHeading from '../components/SectionHeading';
 import needle from '../images/needle.svg';
 import diddly from '../images/nic.svg';
-// import portfolioImg from '../images/services2.jpg'
+import { useState, useEffect } from 'react';
+import Modal from 'react-modal';
+import portfolioImg from '../images/maseczka-reverse.png'
+
+const customStyles = {
+  content: {
+    top: 'auto',
+    left: 'auto',
+    right: '20px',
+    bottom: '20px',
+    backgroundColor: '#FCFBF3',
+    paddingRight: '5px'
+  },
+  overlay: {
+    zIndex: '1000',
+    background: 'transparent'
+  },
+};
+
 
 const IndexPage = ({
   data: {
@@ -18,8 +36,36 @@ const IndexPage = ({
   },
   pageContext,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [shouldOpen, setShouldOpen] = useState(true);
+
+  useEffect(()=> {
+    if(shouldOpen && pageContext.locale === 'pl') {
+        setTimeout(()=> {
+      setIsModalOpen(true);
+      setShouldOpen(false)
+    }, 1500)
+}
+  })
   return (
     <>
+            <Modal
+                  isOpen={isModalOpen}
+                  onRequestClose={() => setIsModalOpen(false)}
+                  contentLabel='test'
+                  style={customStyles}
+                >
+                  <div className={styles.modal}>
+                  <div className={styles.modal__container}>
+
+                    <div className={styles.modal__textcontainer}>
+                      <h2 className={styles.modal__heading}>Maseczki ochronne</h2>
+                      <Button text="home.See more" style="black" href="/maseczki-ochronne" />
+                    </div>
+                    <img src={portfolioImg} alt=""/>
+                    </div>
+                  </div>
+                </Modal>
       <HomeHero data={heroes} />
       <main className="main main--home">
         <section className={styles.about}>
@@ -101,6 +147,8 @@ const IndexPage = ({
 const customProps = {
   localeKey: 'home', // same as file name in src/i18n/translations/your-lang/index.js
 };
+
+
 
 export const query = graphql`
   query getHomeData($locale: String) {
